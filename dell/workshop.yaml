@@ -1,0 +1,19 @@
+name: dell-platform
+base: ubuntu@26.04
+sdks:
+  - name: project-dell-build
+actions:
+  build: |
+    mkdir -p /project/build
+    rsync -a /project/ /project/build/source/ --exclude='.git' --exclude='build' --exclude='.workshop.lock'
+    cd /project/build/source && sudo KVERSION=7.0.0-1002-sonic dpkg-buildpackage -d -b -uc -us
+  clean: |
+    rm -rf /project/build
+  binary: |
+    mkdir -p /project/build
+    rsync -a /project/ /project/build/source/ --exclude='.git' --exclude='build' --exclude='.workshop.lock'
+    cd /project/build/source && sudo KVERSION=7.0.0-1002-sonic dpkg-buildpackage -d -b -uc -us
+  binary-only: |
+    mkdir -p /project/build
+    rsync -a /project/ /project/build/source/ --exclude='.git' --exclude='build' --exclude='.workshop.lock'
+    cd /project/build/source && sudo KVERSION=7.0.0-1002-sonic dpkg-buildpackage -d -B -uc -us
