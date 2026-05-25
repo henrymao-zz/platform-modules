@@ -1,0 +1,3 @@
+/etc/init.d/platform-modules-z9432f
+/etc/modules-load.d/z9432f-modules.conf
+/etc/systemd/system/platform-modules-z9432f.service

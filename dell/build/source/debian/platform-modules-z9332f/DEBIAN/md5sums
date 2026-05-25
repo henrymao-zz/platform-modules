@@ -1,0 +1,17 @@
+7b4180ce9e2de7bdbfe69c35e9741de6  lib/modules/7.0.0-1002-sonic/extra/cls-i2c-mux-pca954x.ko
+105da8b1bf16dba8a126d1770bc9f040  lib/modules/7.0.0-1002-sonic/extra/cls-i2c-ocore.ko
+91c56f196d9ab12b7205310fb7dc8e72  lib/modules/7.0.0-1002-sonic/extra/cls-switchboard.ko
+9f5ac9cf796d8b62e02d838558ac0316  lib/modules/7.0.0-1002-sonic/extra/mc24lc64t.ko
+77e44d166e0a5c3c2843404ace08b1d2  usr/bin/pcisysfs.py
+661c8ae13e13e0f05f0396320ac18b5c  usr/bin/sensors
+206687f00e90638d355ac922867c14a3  usr/local/bin/fw-updater
+9c5bdd6a0b032063e9b9d408ec9af9d4  usr/local/bin/io_rd_wr.py
+a001bcc885f116850748e872c2956cae  usr/local/bin/onie_mode_set
+23b995b920b562f8ff69ba167d8095ee  usr/local/bin/onie_stage_fwpkg
+bf40ef6f8472d7aad27cd731bfca9ad9  usr/local/bin/onie_version
+dc6d7d95d6a22d96e3e1a556cdb45784  usr/local/bin/platform_sensors.py
+3a4370a609b3facd90f9c42e27334cc2  usr/local/bin/z9332f_platform.sh
+9f9153db7de1eecf4546ee0d0bba53b7  usr/share/doc/platform-modules-z9332f/changelog.gz
+2ee58af29e4e6c080eb18b740212c632  usr/share/sonic/device/x86_64-dellemc_z9332f_d1508-r0/fast-reboot_plugin
+72ffde10e39da253236dabe9b1be437f  usr/share/sonic/device/x86_64-dellemc_z9332f_d1508-r0/platform_reboot_override
+86023272da142ecfb694bee6c3182a8b  usr/share/sonic/device/x86_64-dellemc_z9332f_d1508-r0/sonic_platform-1.0-py3-none-any.whl

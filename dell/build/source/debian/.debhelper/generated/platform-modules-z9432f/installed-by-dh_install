@@ -1,0 +1,12 @@
+./z9432f/scripts/z9432f_platform.sh
+./z9432f/scripts/check_qsfp.sh
+./z9432f/scripts/platform_sensors.py
+./z9432f/scripts/sensors
+./z9432f/scripts/qsfp_irq_enable.py
+./z9432f/cfg/z9432f-modules.conf
+./z9432f/systemd/platform-modules-z9432f.service
+./build-z9432f/sonic_platform-1.0-py3-none-any.whl
+./common/platform_reboot
+./common/fw-updater
+./common/onie_mode_set
+./common/pcisysfs.py

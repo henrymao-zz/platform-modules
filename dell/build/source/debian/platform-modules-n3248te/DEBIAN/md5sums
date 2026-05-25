@@ -1,0 +1,13 @@
+5b86a5c61c2370a44ce056d59c3d5054  lib/modules/7.0.0-1002-sonic/extra/dell_n3248te_platform.ko
+21f47d592f568cf4a02d0732ed79e50a  lib/modules/7.0.0-1002-sonic/extra/emc2305.ko
+0768cf8eeae4b54037366af61d5328a9  usr/bin/sensors
+e56133e858e1c06db1ec1c1cccae154c  usr/local/bin/dell_i2c_utils.sh
+206687f00e90638d355ac922867c14a3  usr/local/bin/fw-updater
+e31330f3817ce4793c4a0906e7b81904  usr/local/bin/n3248te_platform.sh
+a001bcc885f116850748e872c2956cae  usr/local/bin/onie_mode_set
+7605ed3c0b0c0e0dca8a3f459d068179  usr/local/bin/platform_sensors.py
+77eb03b545620315472acfcee313289a  usr/local/bin/portiocfg.py
+31afdfd617d8b97ae3dcab4e5de2ed0e  usr/local/bin/ports_xcvrd_notify.py
+9f9153db7de1eecf4546ee0d0bba53b7  usr/share/doc/platform-modules-n3248te/changelog.gz
+72ffde10e39da253236dabe9b1be437f  usr/share/sonic/device/x86_64-dellemc_n3248te_c3338-r0/platform_reboot
+e8f4fef3e7f71cb3df0543ef6152e8e2  usr/share/sonic/device/x86_64-dellemc_n3248te_c3338-r0/sonic_platform-1.0-py3-none-any.whl

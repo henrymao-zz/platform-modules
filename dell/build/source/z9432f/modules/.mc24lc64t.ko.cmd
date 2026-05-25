@@ -1,0 +1,1 @@
+savedcmd_mc24lc64t.ko := ld -r -m elf_x86_64 -z noexecstack --no-warn-rwx-segments --build-id=sha1  -T /usr/src/linux-headers-7.0.0-1002-sonic/scripts/module.lds -o mc24lc64t.ko mc24lc64t.o mc24lc64t.mod.o .module-common.o

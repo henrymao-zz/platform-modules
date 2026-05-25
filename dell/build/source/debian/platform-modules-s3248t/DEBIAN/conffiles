@@ -1,0 +1,4 @@
+/etc/init.d/platform-modules-s3248t
+/etc/modules-load.d/s3248t-modules.conf
+/etc/systemd/system/mux-ctrl.service
+/etc/systemd/system/platform-modules-s3248t.service

@@ -1,0 +1,13 @@
+51c59e9eaba01b7621d9e6efacbcb0b4  lib/modules/7.0.0-1002-sonic/extra/dell_e3224f_platform.ko
+d7d2657e2be635c84aee6ce185729e8b  lib/modules/7.0.0-1002-sonic/extra/emc2305.ko
+0768cf8eeae4b54037366af61d5328a9  usr/bin/sensors
+e56133e858e1c06db1ec1c1cccae154c  usr/local/bin/dell_i2c_utils.sh
+04a21ea7333b48b390bb09aa49f6b438  usr/local/bin/e3224f_platform.sh
+206687f00e90638d355ac922867c14a3  usr/local/bin/fw-updater
+a001bcc885f116850748e872c2956cae  usr/local/bin/onie_mode_set
+c114ccc7a77c6b1f5b9e4899fe43f9d1  usr/local/bin/platform_sensors.py
+1e67545954b94a136d52f1e7e9141c8a  usr/local/bin/portiocfg.py
+31afdfd617d8b97ae3dcab4e5de2ed0e  usr/local/bin/ports_xcvrd_notify.py
+9f9153db7de1eecf4546ee0d0bba53b7  usr/share/doc/platform-modules-e3224f/changelog.gz
+72ffde10e39da253236dabe9b1be437f  usr/share/sonic/device/x86_64-dell_e3224f-r0/platform_reboot
+f00b25e26d3adc070f0bc0a95432a93f  usr/share/sonic/device/x86_64-dell_e3224f-r0/sonic_platform-1.0-py3-none-any.whl

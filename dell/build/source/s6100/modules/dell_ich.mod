@@ -1,0 +1,1 @@
+./dell_ich.o

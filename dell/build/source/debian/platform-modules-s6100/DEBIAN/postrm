@@ -1,0 +1,7 @@
+#!/bin/sh
+set -e
+# Automatically added by dh_installmodules/13.31ubuntu1
+if [ -e /boot/System.map-7.0.0-1002-sonic ]; then
+	depmod -a -F /boot/System.map-7.0.0-1002-sonic 7.0.0-1002-sonic || true
+fi
+# End automatically added section

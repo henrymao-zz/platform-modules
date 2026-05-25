@@ -1,0 +1,15 @@
+8f8a8817f60ed1ecee30c67e97eb63a1  lib/modules/7.0.0-1002-sonic/extra/dell_s6000_platform.ko
+98eee3cc92bbd0d9730ff7539dc7d61f  usr/bin/hw-management-generate-dump.sh
+98eee3cc92bbd0d9730ff7539dc7d61f  usr/local/bin/hw-management-generate-dump.sh
+9c5bdd6a0b032063e9b9d408ec9af9d4  usr/local/bin/io_rd_wr.py
+35b59ad6792a35e98090b3281f19f638  usr/local/bin/override.conf
+6d67eccfa7f729221675d42e584ee845  usr/local/bin/platform_reboot_override
+842631b436d717d7329c959187ce1cb6  usr/local/bin/platform_update_reboot_cause
+190b64a5d30a7f1aec878c465e6a27f3  usr/local/bin/reset-qsfp
+a89326186a3f365fb8ec755730bdecf5  usr/local/bin/s6000_platform.sh
+c43e2dcf9c0f7003c65c61c209ac2044  usr/local/bin/set-fan-speed
+9f9153db7de1eecf4546ee0d0bba53b7  usr/share/doc/platform-modules-s6000/changelog.gz
+b53ec03a5f343907dd9bc4a3d1ff672d  usr/share/sonic/device/x86_64-dell_s6000_s1220-r0/actions.sh
+6d67eccfa7f729221675d42e584ee845  usr/share/sonic/device/x86_64-dell_s6000_s1220-r0/platform_reboot_override
+842631b436d717d7329c959187ce1cb6  usr/share/sonic/device/x86_64-dell_s6000_s1220-r0/platform_update_reboot_cause
+e2ee79f8a95fc77aed781276df3eabaa  usr/share/sonic/device/x86_64-dell_s6000_s1220-r0/sonic_platform-1.0-py3-none-any.whl

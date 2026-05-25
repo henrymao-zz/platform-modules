@@ -1,0 +1,9 @@
+name: dell-build
+version: "1.0"
+summary: Build environment for Dell SONiC platform kernel modules
+description: |
+  Provides build dependencies and kernel headers needed to compile
+  Dell platform kernel modules and package them as Debian packages.
+  Includes debhelper, dh-python, python3, build-essential,
+  and development tools for the SONiC platform.
+license: GPL-2.0

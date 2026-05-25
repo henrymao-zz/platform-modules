@@ -1,0 +1,15 @@
+./z9864f/scripts/z9864f_platform.sh
+./z9864f/scripts/check_qsfp.sh
+./z9864f/scripts/platform_sensors.py
+./z9864f/scripts/sensors
+./z9864f/scripts/pcisysfs.py
+./z9864f/cfg/z9864f-modules.conf
+./z9864f/cfg/z9864f-params.conf
+./z9864f/systemd/platform-modules-z9864f.service
+./build-z9864f/sonic_platform-1.0-py3-none-any.whl
+./common/platform_reboot
+./common/load_optics_driver.py
+./z9864f/system_health_monitoring_config.json
+./common/fw-updater
+./common/onie_mode_set
+./z9864f/scripts/platform-modules-z9864f.sh

@@ -1,0 +1,4 @@
+/etc/init.d/platform-modules-z9332f
+/etc/modules-load.d/z9332f-modules.conf
+/etc/systemd/system/platform-modules-z9332f.service
+/etc/systemd/system/systemd-reboot.service.d/override.conf

@@ -1,0 +1,15 @@
+./z9100/scripts/check_qsfp.sh
+./z9100/scripts/z9100_platform.sh
+./common/dell_i2c_utils.sh
+./common/dell_lpc_mon.sh
+./common/io_rd_wr.py
+./z9100/scripts/platform_reboot_override
+./z9100/scripts/override.conf
+./z9100/scripts/platform_sensors.py
+./z9100/scripts/sensors
+./build-z9100/sonic_platform-1.0-py3-none-any.whl
+./z9100/cfg/z9100-modules.conf
+./z9100/systemd/platform-modules-z9100.service
+./z9100/systemd/z9100-lpc-monitor.service
+./common/fw-updater
+./common/onie_mode_set

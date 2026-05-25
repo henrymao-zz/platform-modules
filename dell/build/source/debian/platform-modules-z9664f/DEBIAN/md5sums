@@ -1,0 +1,17 @@
+52a2601a463b84d0d002425838c1c839  lib/modules/7.0.0-1002-sonic/extra/dell_z9664f_fpga_ocores.ko
+7f40cf220576896f0f1fa29f23acd3f0  lib/modules/7.0.0-1002-sonic/extra/mc24lc64t.ko
+28ae470c5d8170459780fa3f4c717fd5  usr/bin/ext/service/platform-modules-z9664f.sh
+1cfd89e4d48fceaabdc2aeb164dd6bfc  usr/bin/pcisysfs.py
+8d9ca179ccfc76203652b90e8cb61cf2  usr/bin/sensors
+ccd6ec6418f8760196c7760e29954f35  usr/local/bin/check_qsfp.sh
+206687f00e90638d355ac922867c14a3  usr/local/bin/fw-updater
+a001bcc885f116850748e872c2956cae  usr/local/bin/onie_mode_set
+1276399d89750e039848ac3fd1ac0994  usr/local/bin/pddf_post_device_create.sh
+8770e0c341630711132b2529289b56c6  usr/local/bin/pddf_pre_driver_install.sh
+49589516ce9d42bd77fd79493882639e  usr/local/bin/pddf_switch_svc.py
+db4f6a7e6c429d05a23e14b6026898f7  usr/local/bin/platform_sensors.py
+5a6bc44dac59b4b473b110a531f11dd0  usr/local/bin/z9664f_platform.sh
+9f9153db7de1eecf4546ee0d0bba53b7  usr/share/doc/platform-modules-z9664f/changelog.gz
+e7d27c538dd73ada2a776f7ba5140841  usr/share/sonic/device/x86_64-dell_z9664f-r0/pddf/sonic_platform-1.0-py3-none-any.whl
+72ffde10e39da253236dabe9b1be437f  usr/share/sonic/device/x86_64-dell_z9664f-r0/platform_reboot
+8e9816817393283dec9c1226bceabc6a  usr/share/sonic/device/x86_64-dell_z9664f-r0/sonic_platform-1.0-py3-none-any.whl

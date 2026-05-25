@@ -1,0 +1,12 @@
+./n3248te/scripts/n3248te_platform.sh
+./n3248te/scripts/platform_sensors.py
+./n3248te/scripts/sensors
+./n3248te/scripts/portiocfg.py
+./n3248te/scripts/ports_xcvrd_notify.py
+./n3248te/systemd/platform-modules-n3248te.service
+./n3248te/cfg/n3248te-modules.conf
+./common/dell_i2c_utils.sh
+./build-n3248te/sonic_platform-1.0-py3-none-any.whl
+./common/platform_reboot
+./common/fw-updater
+./common/onie_mode_set

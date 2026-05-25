@@ -1,0 +1,3 @@
+/etc/init.d/platform-modules-e3224f
+/etc/modules-load.d/e3224f-modules.conf
+/etc/systemd/system/platform-modules-e3224f.service

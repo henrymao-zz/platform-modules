@@ -1,0 +1,12 @@
+./s5232f/scripts/s5232f_platform.sh
+./s5232f/scripts/check_qsfp.sh
+./s5232f/scripts/platform_sensors.py
+./s5232f/scripts/sensors
+./s5232f/scripts/qsfp_irq_enable.py
+./s5232f/cfg/s5232f-modules.conf
+./s5232f/systemd/platform-modules-s5232f.service
+./build-s5232f/sonic_platform-1.0-py3-none-any.whl
+./common/platform_reboot
+./common/fw-updater
+./common/onie_mode_set
+./common/pcisysfs.py

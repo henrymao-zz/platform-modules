@@ -1,0 +1,9 @@
+/etc/monit/conf.d/s6100_serial_getty_monitor
+/etc/systemd/system/platform-modules-s6100.service
+/etc/systemd/system/s6100-lpc-monitor.service
+/etc/systemd/system/s6100-platform-startup.service
+/etc/systemd/system/s6100-reboot-cause.service
+/etc/systemd/system/s6100-ssd-monitor.service
+/etc/systemd/system/s6100-ssd-monitor.timer
+/etc/systemd/system/s6100-ssd-upgrade-status.service
+/etc/systemd/system/systemd-reboot.service.d/override.conf

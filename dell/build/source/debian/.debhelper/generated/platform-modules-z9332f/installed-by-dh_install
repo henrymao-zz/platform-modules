@@ -1,0 +1,17 @@
+./z9332f/scripts/z9332f_platform.sh
+./z9332f/scripts/platform_sensors.py
+./z9332f/scripts/sensors
+./z9332f/cfg/z9332f-modules.conf
+./z9332f/systemd/platform-modules-z9332f.service
+./build-z9332f/sonic_platform-1.0-py3-none-any.whl
+./z9332f/scripts/platform_reboot_override
+./z9332f/scripts/override.conf
+./z9332f/scripts/fast-reboot_plugin
+./z9332f/scripts/soft-reboot_plugin
+./z9332f/scripts/warm-reboot_plugin
+./common/pcisysfs.py
+./common/io_rd_wr.py
+./common/fw-updater
+./common/onie_mode_set
+./common/onie_stage_fwpkg
+./common/onie_version

@@ -1,0 +1,20 @@
+platform-modules-e3224f_1.1_amd64.deb main extra architecture=amd64
+platform-modules-n3248pxe_1.1_amd64.deb main extra architecture=amd64
+platform-modules-n3248te_1.1_amd64.deb main extra architecture=amd64
+platform-modules-s3248t_1.1_amd64.deb main extra architecture=amd64
+platform-modules-s5212f_1.1_amd64.deb main extra architecture=amd64
+platform-modules-s5224f_1.1_amd64.deb main extra architecture=amd64
+platform-modules-s5232f_1.1_amd64.deb main extra architecture=amd64
+platform-modules-s5248f_1.1_amd64.deb main extra architecture=amd64
+platform-modules-s5296f_1.1_amd64.deb main extra architecture=amd64
+platform-modules-s5448f_1.1_amd64.deb main extra architecture=amd64
+platform-modules-s6000_1.1_amd64.deb main extra architecture=amd64
+platform-modules-s6100-dbgsym_1.1_amd64.ddeb debug optional architecture=amd64 automatic=yes
+platform-modules-s6100_1.1_amd64.deb main extra architecture=amd64
+platform-modules-z9100_1.1_amd64.deb main extra architecture=amd64
+platform-modules-z9264f_1.1_amd64.deb main extra architecture=amd64
+platform-modules-z9332f_1.1_amd64.deb main extra architecture=amd64
+platform-modules-z9432f_1.1_amd64.deb main extra architecture=amd64
+platform-modules-z9664f_1.1_amd64.deb main extra architecture=amd64
+platform-modules-z9864f_1.1_amd64.deb main extra architecture=amd64
+sonic-dell-platform-modules_1.1_amd64.buildinfo main extra

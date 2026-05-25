@@ -1,0 +1,15 @@
+e1910b8528f313251b54f5d0c5a1615d  lib/modules/7.0.0-1002-sonic/extra/dell_ich.ko
+b9e617058d617006d947d2a583eff5d4  lib/modules/7.0.0-1002-sonic/extra/dell_mailbox.ko
+a48fa750a3f208cabf8d118bbb424f3e  lib/modules/7.0.0-1002-sonic/extra/dell_z9100_cpld.ko
+e0ebfff749e64845bf2eb036db7dece7  usr/bin/sensors
+b87882554669864f926427f0367506fa  usr/local/bin/check_qsfp.sh
+e56133e858e1c06db1ec1c1cccae154c  usr/local/bin/dell_i2c_utils.sh
+8238b98f91ce4fcd9b643705df5fac72  usr/local/bin/dell_lpc_mon.sh
+206687f00e90638d355ac922867c14a3  usr/local/bin/fw-updater
+9c5bdd6a0b032063e9b9d408ec9af9d4  usr/local/bin/io_rd_wr.py
+a001bcc885f116850748e872c2956cae  usr/local/bin/onie_mode_set
+9acc5236f66aecca39041077c7ad1296  usr/local/bin/platform_sensors.py
+7fc1fed2a82840be95a77b174298c831  usr/local/bin/z9100_platform.sh
+9f9153db7de1eecf4546ee0d0bba53b7  usr/share/doc/platform-modules-z9100/changelog.gz
+c7ac4d85a4d7784bbe97c86747f8dc0a  usr/share/sonic/device/x86_64-dell_z9100_c2538-r0/platform_reboot_override
+a042cd4021add367dc8a9745f2efffdd  usr/share/sonic/device/x86_64-dell_z9100_c2538-r0/sonic_platform-1.0-py3-none-any.whl

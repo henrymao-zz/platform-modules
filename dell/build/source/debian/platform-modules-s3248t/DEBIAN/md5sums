@@ -1,0 +1,14 @@
+20811ead58628c24a0218c3ae8a1cc9d  lib/modules/7.0.0-1002-sonic/extra/dell_s3248t_platform.ko
+ae713fbe5b18665281144574156b2f60  lib/modules/7.0.0-1002-sonic/extra/emc2305.ko
+9d065f9ba6073c9af392aabb19d1384e  usr/bin/ext/service/platform-modules-s3248t.sh
+0768cf8eeae4b54037366af61d5328a9  usr/bin/sensors
+e56133e858e1c06db1ec1c1cccae154c  usr/local/bin/dell_i2c_utils.sh
+206687f00e90638d355ac922867c14a3  usr/local/bin/fw-updater
+e6e5e4a4267f38f14971733116cc0e5c  usr/local/bin/mux_controller.sh
+a001bcc885f116850748e872c2956cae  usr/local/bin/onie_mode_set
+67382e25aa01fc5bdb7234a53d7a4080  usr/local/bin/platform_sensors.py
+6371f1835af1872705ec69aa02d21660  usr/local/bin/portiocfg.py
+2ac97f094dbf05ca1898db14dcd8cab4  usr/local/bin/s3248t_platform.sh
+9f9153db7de1eecf4546ee0d0bba53b7  usr/share/doc/platform-modules-s3248t/changelog.gz
+72ffde10e39da253236dabe9b1be437f  usr/share/sonic/device/x86_64-dell_s3248t-r0/platform_reboot
+788f03b4d19e98f7f1dfd7079976d15e  usr/share/sonic/device/x86_64-dell_s3248t-r0/sonic_platform-1.0-py3-none-any.whl
