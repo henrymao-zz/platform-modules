@@ -1,3 +1,0 @@
-/etc/init.d/platform-modules-z9264f
-/etc/modules-load.d/z9264f-modules.conf
-/etc/systemd/system/platform-modules-z9264f.service

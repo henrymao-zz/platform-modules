@@ -1,5 +1,0 @@
-/etc/init.d/platform-modules-z9100
-/etc/modules-load.d/z9100-modules.conf
-/etc/systemd/system/platform-modules-z9100.service
-/etc/systemd/system/systemd-reboot.service.d/override.conf
-/etc/systemd/system/z9100-lpc-monitor.service

@@ -1,3 +1,0 @@
-/etc/init.d/platform-modules-s6000
-/etc/systemd/system/platform-modules-s6000.service
-/etc/systemd/system/systemd-reboot.service.d/override.conf

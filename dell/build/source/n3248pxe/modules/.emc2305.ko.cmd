@@ -1,1 +1,0 @@
-savedcmd_emc2305.ko := ld -r -m elf_x86_64 -z noexecstack --no-warn-rwx-segments --build-id=sha1  -T /usr/src/linux-headers-7.0.0-1002-sonic/scripts/module.lds -o emc2305.ko emc2305.o emc2305.mod.o .module-common.o

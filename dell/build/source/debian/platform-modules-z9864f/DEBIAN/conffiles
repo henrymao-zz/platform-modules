@@ -1,3 +1,0 @@
-/etc/modprobe.d/z9864f-params.conf
-/etc/modules-load.d/z9864f-modules.conf
-/etc/systemd/system/platform-modules-z9864f.service

@@ -1,1 +1,0 @@
-savedcmd_dell_ich.ko := ld -r -m elf_x86_64 -z noexecstack --no-warn-rwx-segments --build-id=sha1  -T /usr/src/linux-headers-7.0.0-1002-sonic/scripts/module.lds -o dell_ich.ko dell_ich.o dell_ich.mod.o .module-common.o

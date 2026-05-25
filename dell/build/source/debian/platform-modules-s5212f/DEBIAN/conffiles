@@ -1,4 +1,0 @@
-/etc/init.d/platform-modules-s5212f
-/etc/modprobe.d/s5212f-params.conf
-/etc/modules-load.d/s5212f-modules.conf
-/etc/systemd/system/platform-modules-s5212f.service

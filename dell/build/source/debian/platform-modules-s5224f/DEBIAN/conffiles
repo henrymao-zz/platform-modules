@@ -1,4 +1,0 @@
-/etc/init.d/platform-modules-s5224f
-/etc/modprobe.d/s5224f-params.conf
-/etc/modules-load.d/s5224f-modules.conf
-/etc/systemd/system/platform-modules-s5224f.service

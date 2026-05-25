@@ -1,1 +1,0 @@
-savedcmd_dell_z9864f_fpga.ko := ld -r -m elf_x86_64 -z noexecstack --no-warn-rwx-segments --build-id=sha1  -T /usr/src/linux-headers-7.0.0-1002-sonic/scripts/module.lds -o dell_z9864f_fpga.ko dell_z9864f_fpga.o dell_z9864f_fpga.mod.o .module-common.o

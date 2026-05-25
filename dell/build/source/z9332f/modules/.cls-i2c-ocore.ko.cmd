@@ -1,1 +1,0 @@
-savedcmd_cls-i2c-ocore.ko := ld -r -m elf_x86_64 -z noexecstack --no-warn-rwx-segments --build-id=sha1  -T /usr/src/linux-headers-7.0.0-1002-sonic/scripts/module.lds -o cls-i2c-ocore.ko cls-i2c-ocore.o cls-i2c-ocore.mod.o .module-common.o

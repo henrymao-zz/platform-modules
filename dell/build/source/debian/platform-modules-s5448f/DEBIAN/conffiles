@@ -1,5 +1,0 @@
-/etc/init.d/platform-modules-s5448f
-/etc/modprobe.d/s5448f-params.conf
-/etc/modules-load.d/s5448f-modules.conf
-/etc/systemd/system/pddf-platform-init.service
-/etc/systemd/system/platform-modules-s5448f.service
