@@ -17,7 +17,18 @@ apt-get install -y \
     python3-venv \
     devscripts \
     fakeroot \
-    lintian
+    lintian \
+    dput
+
+# Configure dput for PPA upload
+cat > /home/ubuntu/.dput.cf << 'EOF'
+[ubuntu-nos]
+fqdn = ppa.launchpad.net
+method = ftp
+incoming = ~henrymao/ubuntu/ubuntu-nos
+login = anonymous
+allow_unsigned_uploads = 1
+EOF
 
 # Install SONiC kernel headers from the PPA
 SONIC_KERNEL_VERSION="7.0.0-1002-sonic"

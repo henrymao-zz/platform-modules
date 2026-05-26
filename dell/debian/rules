@@ -7,7 +7,8 @@ ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
     MAKE_FLAGS += -j$(NUMJOBS)
 endif
 
-KVERSION   ?= $(shell uname -r)
+#KVERSION   ?= $(shell uname -r)
+KVERSION   := 7.0.0-1002-sonic
 KERNEL_SRC :=  /lib/modules/$(KVERSION)
 MOD_SRC_DIR:= $(shell pwd)
 MODULE_DIRS:= s6000 z9100 s6100 z9264f s5212f s5224f s5232f s5248f s5448f z9332f z9432f s5296f n3248pxe n3248te e3224f s3248t z9664f z9864f

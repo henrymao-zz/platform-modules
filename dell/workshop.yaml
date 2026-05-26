@@ -33,5 +33,20 @@ actions:
     mkdir -p /project/build/source/debian/patches
     cp /project/build/source/ubuntu/patches/*.patch /project/build/source/debian/patches/
     cd /project/build/source/debian/patches && ls -1 *.patch > series
+    # PPAs reject 'main' as a section; use 'misc' instead
+    sed -i 's/^Section: main$/Section: misc/' /project/build/source/debian/control
     cd /project/build/source && dpkg-buildpackage -S -sa -uc -us
-    dput ppa:henrymao/ubuntu-nos /project/build/source/../*_source.changes
+    # dpkg-buildpackage -S may generate an arch-specific buildinfo when
+    # build-deps are installed, causing binaryfulness mismatch on dput.
+    # Remove it and regenerate changes with only source buildinfo.
+    BUILD_DIR=$(dirname "$(ls /project/build/source/../*_source.dsc | head -1)")
+    if ls "${BUILD_DIR}"/*_amd64.buildinfo >/dev/null 2>&1; then
+      rm -f "${BUILD_DIR}"/*_amd64.buildinfo
+      sed -i '/_amd64\.buildinfo/d' /project/build/source/debian/files
+      cd /project/build/source && dpkg-genchanges -S -O"${BUILD_DIR}/$(basename "$(ls "${BUILD_DIR}"/*_source.changes)")"
+    fi
+    CHANGES=$(ls "${BUILD_DIR}"/*_source.changes)
+    if [ -n "${GPG_KEY_ID:-}" ]; then
+      debsign -k "${GPG_KEY_ID}" "${CHANGES}"
+    fi
+    dput ubuntu-nos "${CHANGES}"
