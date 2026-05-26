@@ -46,7 +46,7 @@ static int fpga_gpio_get(struct gpio_chip *gc, unsigned gpio)
     return ret;
 }
 
-static int fpga_gpio_set(struct gpio_chip *gc,
+static void fpga_gpio_set(struct gpio_chip *gc,
                           unsigned gpio, int val)
 {
     struct fpga_gpio_chip *chip = gpiochip_get_data(gc);
@@ -66,8 +66,6 @@ static int fpga_gpio_set(struct gpio_chip *gc,
     iowrite32(wdata, chip->bar + reg);
 
     mutex_unlock(&chip->lock);
-
-    return 0;
 }
 
 int gpiodev_init(struct pci_dev *dev, struct fpga_dev *fpga)

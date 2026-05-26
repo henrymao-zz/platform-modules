@@ -5,19 +5,25 @@ sdks:
 actions:
   build: |
     mkdir -p /project/build
-    sudo KVERSION=7.0.0-1002-sonic dpkg-buildpackage -d -b -uc -us
-    mv /sonic-dell-platform-modules_*.deb /sonic-dell-platform-modules_*.buildinfo /sonic-dell-platform-modules_*.changes /project/build/ 2>/dev/null || true
-    mv /platform-modules-*_*.deb /platform-modules-*_*.ddeb /project/build/ 2>/dev/null || true
+    rsync -a /project/ /project/build/source/ --exclude='.git' --exclude='build' --exclude='.workshop.lock'
+    for patch in /project/build/source/patch/*.patch; do
+      [ -f "$patch" ] && patch -d /project/build/source -p1 < "$patch"
+    done
+    cd /project/build/source && sudo KVERSION=7.0.0-1002-sonic dpkg-buildpackage -d -b -uc -us
   clean: |
     rm -rf /project/build
     find /project -type d -name 'build' -not -path '*/.git/*' -exec rm -rf {} + 2>/dev/null || true
   binary: |
     mkdir -p /project/build
-    sudo KVERSION=7.0.0-1002-sonic dpkg-buildpackage -d -b -uc -us
-    mv /sonic-dell-platform-modules_*.deb /sonic-dell-platform-modules_*.buildinfo /sonic-dell-platform-modules_*.changes /project/build/ 2>/dev/null || true
-    mv /platform-modules-*_*.deb /platform-modules-*_*.ddeb /project/build/ 2>/dev/null || true
+    rsync -a /project/ /project/build/source/ --exclude='.git' --exclude='build' --exclude='.workshop.lock'
+    for patch in /project/build/source/patch/*.patch; do
+      [ -f "$patch" ] && patch -d /project/build/source -p1 < "$patch"
+    done
+    cd /project/build/source && sudo KVERSION=7.0.0-1002-sonic dpkg-buildpackage -d -b -uc -us
   binary-only: |
     mkdir -p /project/build
-    sudo KVERSION=7.0.0-1002-sonic dpkg-buildpackage -d -B -uc -us
-    mv /sonic-dell-platform-modules_*.deb /sonic-dell-platform-modules_*.buildinfo /sonic-dell-platform-modules_*.changes /project/build/ 2>/dev/null || true
-    mv /platform-modules-*_*.deb /platform-modules-*_*.ddeb /project/build/ 2>/dev/null || true
+    rsync -a /project/ /project/build/source/ --exclude='.git' --exclude='build' --exclude='.workshop.lock'
+    for patch in /project/build/source/patch/*.patch; do
+      [ -f "$patch" ] && patch -d /project/build/source -p1 < "$patch"
+    done
+    cd /project/build/source && sudo KVERSION=7.0.0-1002-sonic dpkg-buildpackage -d -B -uc -us
