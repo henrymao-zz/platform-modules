@@ -1,4 +1,4 @@
-sonic-dell-platform-modules (1.3) plucky; urgency=medium
+sonic-dell-platform-modules (1.3) resolute; urgency=medium
 
   * Rebuild against kernel 7.0.0-1002-sonic
   * Add kernel API compatibility patches for Ubuntu
