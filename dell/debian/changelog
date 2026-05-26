@@ -1,3 +1,10 @@
+sonic-dell-platform-modules (1.5) resolute; urgency=medium
+
+  * Fix Section from 'main' to 'misc' for PPA upload
+  * Add python3-build and python3-setuptools to Build-Depends for wheel building
+
+ -- Henry Mao <henry.mao@canonical.com>  Mon, 26 May 2026 15:00:00 +0800
+
 sonic-dell-platform-modules (1.4) resolute; urgency=medium
 
   * Fix Section from 'main' to 'misc' for PPA upload
