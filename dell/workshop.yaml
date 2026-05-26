@@ -6,7 +6,7 @@ actions:
   build: |
     mkdir -p /project/build
     rsync -a /project/ /project/build/source/ --exclude='.git' --exclude='build' --exclude='.workshop.lock'
-    for patch in /project/build/source/patch/*.patch; do
+    for patch in /project/build/source/ubuntu/patches/*.patch; do
       [ -f "$patch" ] && patch -d /project/build/source -p1 < "$patch"
     done
     cd /project/build/source && sudo KVERSION=7.0.0-1002-sonic dpkg-buildpackage -d -b -uc -us
@@ -16,14 +16,22 @@ actions:
   binary: |
     mkdir -p /project/build
     rsync -a /project/ /project/build/source/ --exclude='.git' --exclude='build' --exclude='.workshop.lock'
-    for patch in /project/build/source/patch/*.patch; do
+    for patch in /project/build/source/ubuntu/patches/*.patch; do
       [ -f "$patch" ] && patch -d /project/build/source -p1 < "$patch"
     done
     cd /project/build/source && sudo KVERSION=7.0.0-1002-sonic dpkg-buildpackage -d -b -uc -us
   binary-only: |
     mkdir -p /project/build
     rsync -a /project/ /project/build/source/ --exclude='.git' --exclude='build' --exclude='.workshop.lock'
-    for patch in /project/build/source/patch/*.patch; do
+    for patch in /project/build/source/ubuntu/patches/*.patch; do
       [ -f "$patch" ] && patch -d /project/build/source -p1 < "$patch"
     done
     cd /project/build/source && sudo KVERSION=7.0.0-1002-sonic dpkg-buildpackage -d -B -uc -us
+  source: |
+    mkdir -p /project/build
+    rsync -a /project/ /project/build/source/ --exclude='.git' --exclude='build' --exclude='.workshop.lock'
+    mkdir -p /project/build/source/debian/patches
+    cp /project/build/source/ubuntu/patches/*.patch /project/build/source/debian/patches/
+    cd /project/build/source/debian/patches && ls -1 *.patch > series
+    cd /project/build/source && dpkg-buildpackage -S -sa -uc -us
+    dput ppa:henrymao/ubuntu-nos /project/build/source/../*_source.changes

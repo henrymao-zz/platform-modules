@@ -1,3 +1,10 @@
+sonic-dell-platform-modules (1.3) plucky; urgency=medium
+
+  * Rebuild against kernel 7.0.0-1002-sonic
+  * Add kernel API compatibility patches for Ubuntu
+
+ -- Henry Mao <henry.mao@canonical.com>  Mon, 26 May 2026 12:00:00 +0800
+
 sonic-dell-platform-modules (1.1) unstable; urgency=low
 
   * Add support for Dell S6100
