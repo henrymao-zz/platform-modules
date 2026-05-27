@@ -35,16 +35,23 @@ actions:
     cd /project/build/source/debian/patches && ls -1 *.patch > series
     # PPAs reject 'main' as a section; use 'misc' instead
     sed -i 's/^Section: main$/Section: misc/' /project/build/source/debian/control
-    cd /project/build/source && dpkg-buildpackage -S -sa -uc -us
-    # dpkg-buildpackage -S may generate an arch-specific buildinfo when
-    # build-deps are installed, causing binaryfulness mismatch on dput.
-    # Remove it and regenerate changes with only source buildinfo.
-    BUILD_DIR=$(dirname "$(ls /project/build/source/../*_source.dsc | head -1)")
-    if ls "${BUILD_DIR}"/*_amd64.buildinfo >/dev/null 2>&1; then
-      rm -f "${BUILD_DIR}"/*_amd64.buildinfo
-      sed -i '/_amd64\.buildinfo/d' /project/build/source/debian/files
-      cd /project/build/source && dpkg-genchanges -S -O"${BUILD_DIR}/$(basename "$(ls "${BUILD_DIR}"/*_source.changes)")"
-    fi
+    # Fix install paths for pkgbinarymangler compliance
+    find /project/build/source/debian -maxdepth 1 -name "*.install" -exec sed -i 's|usr/local/bin|usr/bin|g' {} +
+    sed -i 's|usr/local/bin|usr/bin|g' /project/build/source/debian/rules
+    # Extract upstream version (strip Debian revision, e.g. 1.8.0-1~ppa1 -> 1.8.0)
+    UPSTREAM_VER=$(cd /project/build/source && dpkg-parsechangelog -S Version | sed 's/-[^-]*$//')
+    PKG_NAME=sonic-dell-platform-modules
+    BUILD_DIR=/project/build
+    orig_tarball="${BUILD_DIR}/${PKG_NAME}_${UPSTREAM_VER}.orig.tar.xz"
+    # Create orig tarball from clean source (excluding debian/)
+    tar --exclude='source/debian' --exclude='source/.workshop.lock' -cJf "${orig_tarball}" -C "${BUILD_DIR}" source/
+    cd /project/build/source && dpkg-source -b .
+    # Unapply patches so the source tree stays clean for subsequent builds
+    cd /project/build/source && dpkg-source --after-build . 2>/dev/null || true
+    # Generate source-only buildinfo and changes
+    cd /project/build/source && dpkg-genbuildinfo --build=source -O"${BUILD_DIR}/$(dpkg-parsechangelog -S Source)_$(dpkg-parsechangelog -S Version)_source.buildinfo"
+    sed -i '/_amd64\.buildinfo/d' /project/build/source/debian/files
+    cd /project/build/source && dpkg-genchanges -S -O"${BUILD_DIR}/$(dpkg-parsechangelog -S Source)_$(dpkg-parsechangelog -S Version)_source.changes"
     CHANGES=$(ls "${BUILD_DIR}"/*_source.changes)
     if [ -n "${GPG_KEY_ID:-}" ]; then
       debsign -k "${GPG_KEY_ID}" "${CHANGES}"
