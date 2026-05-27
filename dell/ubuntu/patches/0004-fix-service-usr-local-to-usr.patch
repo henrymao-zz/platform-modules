@@ -1,0 +1,393 @@
+diff --git a/e3224f/systemd/mux-ctrl.service b/e3224f/systemd/mux-ctrl.service
+index 2053042..cbaa746 100644
+--- a/e3224f/systemd/mux-ctrl.service
++++ b/e3224f/systemd/mux-ctrl.service
+@@ -6,7 +6,7 @@ DefaultDependencies=no
+ 
+ [Service]
+ Type=oneshot
+-ExecStart=/usr/local/bin/mux_controller.sh
++ExecStart=/usr/bin/mux_controller.sh
+ RemainAfterExit=yes
+ 
+ [Install]
+diff --git a/e3224f/systemd/platform-modules-e3224f.service b/e3224f/systemd/platform-modules-e3224f.service
+index 66b9013..9897b0b 100644
+--- a/e3224f/systemd/platform-modules-e3224f.service
++++ b/e3224f/systemd/platform-modules-e3224f.service
+@@ -6,8 +6,8 @@ DefaultDependencies=no
+ 
+ [Service]
+ Type=oneshot
+-ExecStart=/usr/local/bin/e3224f_platform.sh init
+-ExecStop=/usr/local/bin/e3224f_platform.sh deinit
++ExecStart=/usr/bin/e3224f_platform.sh init
++ExecStop=/usr/bin/e3224f_platform.sh deinit
+ RemainAfterExit=yes
+ 
+ [Install]
+diff --git a/n3248pxe/systemd/platform-modules-n3248pxe.service b/n3248pxe/systemd/platform-modules-n3248pxe.service
+index 68c7ea3..bd71c70 100644
+--- a/n3248pxe/systemd/platform-modules-n3248pxe.service
++++ b/n3248pxe/systemd/platform-modules-n3248pxe.service
+@@ -5,8 +5,8 @@ DefaultDependencies=no
+ 
+ [Service]
+ Type=oneshot
+-ExecStart=/usr/local/bin/n3248pxe_platform.sh init
+-ExecStop=/usr/local/bin/n3248pxe_platform.sh deinit
++ExecStart=/usr/bin/n3248pxe_platform.sh init
++ExecStop=/usr/bin/n3248pxe_platform.sh deinit
+ RemainAfterExit=yes
+ 
+ [Install]
+diff --git a/n3248te/systemd/platform-modules-n3248te.service b/n3248te/systemd/platform-modules-n3248te.service
+index 403945f..f4ea842 100644
+--- a/n3248te/systemd/platform-modules-n3248te.service
++++ b/n3248te/systemd/platform-modules-n3248te.service
+@@ -6,8 +6,8 @@ DefaultDependencies=no
+ 
+ [Service]
+ Type=oneshot
+-ExecStart=/usr/local/bin/n3248te_platform.sh init
+-ExecStop=/usr/local/bin/n3248te_platform.sh deinit
++ExecStart=/usr/bin/n3248te_platform.sh init
++ExecStop=/usr/bin/n3248te_platform.sh deinit
+ RemainAfterExit=yes
+ 
+ [Install]
+diff --git a/s3248t/systemd/mux-ctrl.service b/s3248t/systemd/mux-ctrl.service
+index b04314b..4a3c14f 100644
+--- a/s3248t/systemd/mux-ctrl.service
++++ b/s3248t/systemd/mux-ctrl.service
+@@ -6,7 +6,7 @@ DefaultDependencies=no
+ 
+ [Service]
+ Type=oneshot
+-ExecStart=/usr/local/bin/mux_controller.sh
++ExecStart=/usr/bin/mux_controller.sh
+ RemainAfterExit=yes
+ 
+ [Install]
+diff --git a/s3248t/systemd/platform-modules-s3248t.service b/s3248t/systemd/platform-modules-s3248t.service
+index def275e..8008a58 100644
+--- a/s3248t/systemd/platform-modules-s3248t.service
++++ b/s3248t/systemd/platform-modules-s3248t.service
+@@ -6,8 +6,8 @@ DefaultDependencies=no
+ 
+ [Service]
+ Type=oneshot
+-ExecStart=/usr/local/bin/s3248t_platform.sh init
+-ExecStop=/usr/local/bin/s3248t_platform.sh deinit
++ExecStart=/usr/bin/s3248t_platform.sh init
++ExecStop=/usr/bin/s3248t_platform.sh deinit
+ RemainAfterExit=yes
+ 
+ [Install]
+diff --git a/s5212f/systemd/platform-modules-s5212f.service b/s5212f/systemd/platform-modules-s5212f.service
+index a1ac970..b2e30c5 100644
+--- a/s5212f/systemd/platform-modules-s5212f.service
++++ b/s5212f/systemd/platform-modules-s5212f.service
+@@ -5,8 +5,8 @@ DefaultDependencies=no
+ 
+ [Service]
+ Type=oneshot
+-ExecStart=/usr/local/bin/s5212f_platform.sh init
+-ExecStop=/usr/local/bin/s5212f_platform.sh deinit
++ExecStart=/usr/bin/s5212f_platform.sh init
++ExecStop=/usr/bin/s5212f_platform.sh deinit
+ RemainAfterExit=yes
+ 
+ [Install]
+diff --git a/s5224f/systemd/platform-modules-s5224f.service b/s5224f/systemd/platform-modules-s5224f.service
+index 69c0c0a..a8694b2 100644
+--- a/s5224f/systemd/platform-modules-s5224f.service
++++ b/s5224f/systemd/platform-modules-s5224f.service
+@@ -5,8 +5,8 @@ DefaultDependencies=no
+ 
+ [Service]
+ Type=oneshot
+-ExecStart=/usr/local/bin/s5224f_platform.sh init
+-ExecStop=/usr/local/bin/s5224f_platform.sh deinit
++ExecStart=/usr/bin/s5224f_platform.sh init
++ExecStop=/usr/bin/s5224f_platform.sh deinit
+ RemainAfterExit=yes
+ 
+ [Install]
+diff --git a/s5232f/systemd/platform-modules-s5232f.service b/s5232f/systemd/platform-modules-s5232f.service
+index 0ca31b5..dd64d8c 100644
+--- a/s5232f/systemd/platform-modules-s5232f.service
++++ b/s5232f/systemd/platform-modules-s5232f.service
+@@ -5,8 +5,8 @@ DefaultDependencies=no
+ 
+ [Service]
+ Type=oneshot
+-ExecStart=/usr/local/bin/s5232f_platform.sh init
+-ExecStop=/usr/local/bin/s5232f_platform.sh deinit
++ExecStart=/usr/bin/s5232f_platform.sh init
++ExecStop=/usr/bin/s5232f_platform.sh deinit
+ RemainAfterExit=yes
+ 
+ [Install]
+diff --git a/s5248f/systemd/platform-modules-s5248f.service b/s5248f/systemd/platform-modules-s5248f.service
+index ec3ea09..13da440 100644
+--- a/s5248f/systemd/platform-modules-s5248f.service
++++ b/s5248f/systemd/platform-modules-s5248f.service
+@@ -5,8 +5,8 @@ DefaultDependencies=no
+ 
+ [Service]
+ Type=oneshot
+-ExecStart=/usr/local/bin/s5248f_platform.sh init
+-ExecStop=/usr/local/bin/s5248f_platform.sh deinit
++ExecStart=/usr/bin/s5248f_platform.sh init
++ExecStop=/usr/bin/s5248f_platform.sh deinit
+ RemainAfterExit=yes
+ 
+ [Install]
+diff --git a/s5296f/systemd/platform-modules-s5296f.service b/s5296f/systemd/platform-modules-s5296f.service
+index b58673d..0b7e94f 100644
+--- a/s5296f/systemd/platform-modules-s5296f.service
++++ b/s5296f/systemd/platform-modules-s5296f.service
+@@ -5,8 +5,8 @@ DefaultDependencies=no
+ 
+ [Service]
+ Type=oneshot
+-ExecStart=/usr/local/bin/s5296f_platform.sh init
+-ExecStop=/usr/local/bin/s5296f_platform.sh deinit
++ExecStart=/usr/bin/s5296f_platform.sh init
++ExecStop=/usr/bin/s5296f_platform.sh deinit
+ RemainAfterExit=yes
+ 
+ [Install]
+diff --git a/s5448f/systemd/pddf-platform-init.service b/s5448f/systemd/pddf-platform-init.service
+index d7228bd..ce5a68e 100644
+--- a/s5448f/systemd/pddf-platform-init.service
++++ b/s5448f/systemd/pddf-platform-init.service
+@@ -7,8 +7,8 @@ DefaultDependencies=no
+ 
+ [Service]
+ Type=oneshot
+-ExecStart=/usr/local/bin/pddf_util.py install
+-ExecStop=/usr/local/bin/pddf_util.py clean
++ExecStart=/usr/bin/pddf_util.py install
++ExecStop=/usr/bin/pddf_util.py clean
+ RemainAfterExit=yes
+ 
+ [Install]
+diff --git a/s5448f/systemd/platform-modules-s5448f.service b/s5448f/systemd/platform-modules-s5448f.service
+index 2059948..ee036f1 100644
+--- a/s5448f/systemd/platform-modules-s5448f.service
++++ b/s5448f/systemd/platform-modules-s5448f.service
+@@ -7,8 +7,8 @@ DefaultDependencies=no
+ 
+ [Service]
+ Type=oneshot
+-ExecStart=/usr/local/bin/s5448f_platform.sh init
+-ExecStop=/usr/local/bin/s5448f_platform.sh deinit
++ExecStart=/usr/bin/s5448f_platform.sh init
++ExecStop=/usr/bin/s5448f_platform.sh deinit
+ RemainAfterExit=yes
+ 
+ [Install]
+diff --git a/s6000/systemd/platform-modules-s6000.service b/s6000/systemd/platform-modules-s6000.service
+index 22de50c..aa014d1 100644
+--- a/s6000/systemd/platform-modules-s6000.service
++++ b/s6000/systemd/platform-modules-s6000.service
+@@ -5,8 +5,8 @@ Before=pmon.service determine-reboot-cause.service
+ 
+ [Service]
+ Type=oneshot
+-ExecStart=/usr/local/bin/s6000_platform.sh init
+-ExecStop=/usr/local/bin/s6000_platform.sh deinit
++ExecStart=/usr/bin/s6000_platform.sh init
++ExecStop=/usr/bin/s6000_platform.sh deinit
+ RemainAfterExit=yes
+ 
+ [Install]
+diff --git a/s6100/systemd/platform-modules-s6100.service b/s6100/systemd/platform-modules-s6100.service
+index 127426f..ef3818d 100644
+--- a/s6100/systemd/platform-modules-s6100.service
++++ b/s6100/systemd/platform-modules-s6100.service
+@@ -5,9 +5,9 @@ DefaultDependencies=no
+ 
+ [Service]
+ Type=oneshot
+-ExecStartPre=/usr/local/bin/iom_power_on.sh
+-ExecStart=/usr/local/bin/s6100_platform.sh init
+-ExecStop=/usr/local/bin/s6100_platform.sh deinit
++ExecStartPre=/usr/bin/iom_power_on.sh
++ExecStart=/usr/bin/s6100_platform.sh init
++ExecStop=/usr/bin/s6100_platform.sh deinit
+ RemainAfterExit=yes
+ 
+ [Install]
+diff --git a/s6100/systemd/s6100-lpc-monitor.service b/s6100/systemd/s6100-lpc-monitor.service
+index 86dac18..298ec6d 100644
+--- a/s6100/systemd/s6100-lpc-monitor.service
++++ b/s6100/systemd/s6100-lpc-monitor.service
+@@ -4,7 +4,7 @@ DefaultDependencies=no
+ 
+ [Service]
+ User=root
+-ExecStart=/usr/local/bin/dell_lpc_mon.sh
++ExecStart=/usr/bin/dell_lpc_mon.sh
+ RemainAfterExit=yes
+ 
+ [Install]
+diff --git a/s6100/systemd/s6100-platform-startup.service b/s6100/systemd/s6100-platform-startup.service
+index ecba7b0..8c6138b 100644
+--- a/s6100/systemd/s6100-platform-startup.service
++++ b/s6100/systemd/s6100-platform-startup.service
+@@ -5,7 +5,7 @@ DefaultDependencies=no
+ 
+ [Service]
+ Type=oneshot
+-ExecStart=/usr/local/bin/s6100_platform_startup.sh init
++ExecStart=/usr/bin/s6100_platform_startup.sh init
+ RemainAfterExit=no
+ 
+ [Install]
+diff --git a/s6100/systemd/s6100-ssd-monitor.service b/s6100/systemd/s6100-ssd-monitor.service
+index 75e3b22..cd1f41a 100644
+--- a/s6100/systemd/s6100-ssd-monitor.service
++++ b/s6100/systemd/s6100-ssd-monitor.service
+@@ -4,7 +4,7 @@ DefaultDependencies=no
+ 
+ [Service]
+ User=root
+-ExecStart=/usr/local/bin/s6100_ssd_mon.sh
++ExecStart=/usr/bin/s6100_ssd_mon.sh
+ RemainAfterExit=no
+ 
+ [Install]
+diff --git a/s6100/systemd/s6100-ssd-upgrade-status.service b/s6100/systemd/s6100-ssd-upgrade-status.service
+index 4de9cf7..87507d8 100644
+--- a/s6100/systemd/s6100-ssd-upgrade-status.service
++++ b/s6100/systemd/s6100-ssd-upgrade-status.service
+@@ -6,7 +6,7 @@ DefaultDependencies=no
+ [Service]
+ User=root
+ Type=oneshot
+-ExecStart=/usr/local/bin/s6100_ssd_upgrade_status.sh
++ExecStart=/usr/bin/s6100_ssd_upgrade_status.sh
+ RemainAfterExit=no
+ 
+ [Install]
+diff --git a/z9100/systemd/platform-modules-z9100.service b/z9100/systemd/platform-modules-z9100.service
+index 390cb6e..95b557b 100644
+--- a/z9100/systemd/platform-modules-z9100.service
++++ b/z9100/systemd/platform-modules-z9100.service
+@@ -5,8 +5,8 @@ DefaultDependencies=no
+ 
+ [Service]
+ Type=oneshot
+-ExecStart=/usr/local/bin/z9100_platform.sh init
+-ExecStop=/usr/local/bin/z9100_platform.sh deinit
++ExecStart=/usr/bin/z9100_platform.sh init
++ExecStop=/usr/bin/z9100_platform.sh deinit
+ RemainAfterExit=yes
+ 
+ [Install]
+diff --git a/z9100/systemd/z9100-lpc-monitor.service b/z9100/systemd/z9100-lpc-monitor.service
+index 136081a..f7f31dc 100644
+--- a/z9100/systemd/z9100-lpc-monitor.service
++++ b/z9100/systemd/z9100-lpc-monitor.service
+@@ -4,7 +4,7 @@ DefaultDependencies=no
+ 
+ [Service]
+ User=root
+-ExecStart=/usr/local/bin/dell_lpc_mon.sh
++ExecStart=/usr/bin/dell_lpc_mon.sh
+ RemainAfterExit=yes
+ 
+ [Install]
+diff --git a/z9264f/systemd/platform-modules-z9264f.service b/z9264f/systemd/platform-modules-z9264f.service
+index 05d920a..d831c3e 100644
+--- a/z9264f/systemd/platform-modules-z9264f.service
++++ b/z9264f/systemd/platform-modules-z9264f.service
+@@ -5,8 +5,8 @@ DefaultDependencies=no
+ 
+ [Service]
+ Type=oneshot
+-ExecStart=/usr/local/bin/z9264f_platform.sh init
+-ExecStop=/usr/local/bin/z9264f_platform.sh deinit
++ExecStart=/usr/bin/z9264f_platform.sh init
++ExecStop=/usr/bin/z9264f_platform.sh deinit
+ RemainAfterExit=yes
+ 
+ [Install]
+diff --git a/z9332f/systemd/platform-modules-z9332f.service b/z9332f/systemd/platform-modules-z9332f.service
+index 3483137..03e1e91 100644
+--- a/z9332f/systemd/platform-modules-z9332f.service
++++ b/z9332f/systemd/platform-modules-z9332f.service
+@@ -5,8 +5,8 @@ DefaultDependencies=no
+ 
+ [Service]
+ Type=oneshot
+-ExecStart=/usr/local/bin/z9332f_platform.sh init
+-ExecStop=/usr/local/bin/z9332f_platform.sh deinit
++ExecStart=/usr/bin/z9332f_platform.sh init
++ExecStop=/usr/bin/z9332f_platform.sh deinit
+ RemainAfterExit=yes
+ 
+ [Install]
+diff --git a/z9432f/systemd/platform-modules-z9432f.service b/z9432f/systemd/platform-modules-z9432f.service
+index 8ae1d65..dc14b0a 100644
+--- a/z9432f/systemd/platform-modules-z9432f.service
++++ b/z9432f/systemd/platform-modules-z9432f.service
+@@ -6,8 +6,8 @@ DefaultDependencies=no
+ 
+ [Service]
+ Type=oneshot
+-ExecStart=/usr/local/bin/z9432f_platform.sh init
+-ExecStop=/usr/local/bin/z9432f_platform.sh deinit
++ExecStart=/usr/bin/z9432f_platform.sh init
++ExecStop=/usr/bin/z9432f_platform.sh deinit
+ RemainAfterExit=yes
+ 
+ [Install]
+diff --git a/z9664f/systemd/pddf-platform-init.service b/z9664f/systemd/pddf-platform-init.service
+index d7228bd..ce5a68e 100644
+--- a/z9664f/systemd/pddf-platform-init.service
++++ b/z9664f/systemd/pddf-platform-init.service
+@@ -7,8 +7,8 @@ DefaultDependencies=no
+ 
+ [Service]
+ Type=oneshot
+-ExecStart=/usr/local/bin/pddf_util.py install
+-ExecStop=/usr/local/bin/pddf_util.py clean
++ExecStart=/usr/bin/pddf_util.py install
++ExecStop=/usr/bin/pddf_util.py clean
+ RemainAfterExit=yes
+ 
+ [Install]
+diff --git a/z9664f/systemd/platform-modules-z9664f.service b/z9664f/systemd/platform-modules-z9664f.service
+index 3c3cee3..2899eb1 100644
+--- a/z9664f/systemd/platform-modules-z9664f.service
++++ b/z9664f/systemd/platform-modules-z9664f.service
+@@ -7,8 +7,8 @@ DefaultDependencies=no
+ 
+ [Service]
+ Type=oneshot
+-ExecStart=/usr/local/bin/z9664f_platform.sh init
+-ExecStop=/usr/local/bin/z9664f_platform.sh deinit
++ExecStart=/usr/bin/z9664f_platform.sh init
++ExecStop=/usr/bin/z9664f_platform.sh deinit
+ RemainAfterExit=yes
+ 
+ [Install]
+diff --git a/z9864f/systemd/platform-modules-z9864f.service b/z9864f/systemd/platform-modules-z9864f.service
+index 22106b6..d26e003 100644
+--- a/z9864f/systemd/platform-modules-z9864f.service
++++ b/z9864f/systemd/platform-modules-z9864f.service
+@@ -7,8 +7,8 @@ DefaultDependencies=no
+ 
+ [Service]
+ Type=oneshot
+-ExecStart=/usr/local/bin/z9864f_platform.sh init
+-ExecStop=/usr/local/bin/z9864f_platform.sh deinit
++ExecStart=/usr/bin/z9864f_platform.sh init
++ExecStop=/usr/bin/z9864f_platform.sh deinit
+ RemainAfterExit=yes
+ 
+ [Install]
