@@ -1,4 +1,4 @@
-sonic-dell-platform-modules (1.8.0-1~ppa2) resolute; urgency=medium
+sonic-dell-platform-modules (1.8.1-1~ppa1) resolute; urgency=medium
 
   * Fix Section from 'main' to 'misc' for PPA upload
   * Add python3-build and python3-setuptools to Build-Depends
