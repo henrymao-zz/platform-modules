@@ -1,0 +1,26 @@
+# Workshop lock
+.workshop.lock
+
+# Build output directory
+build/
+
+# Kernel module build artifacts
+*.o
+*.ko
+*.mod
+*.mod.c
+.*.cmd
+Module.symvers
+modules.order
+
+# Python build artifacts
+sonic_platform.egg-info/
+*.whl
+
+# Debian packaging build artifacts
+debian/files
+debian/*.substvars
+debian/*.debhelper*
+debian/debhelper-build-stamp
+debian/.debhelper/
+debian/platform-modules-*/
