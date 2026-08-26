@@ -1,0 +1,53 @@
+Description: Add const to bin_attribute in mc24lc64t for newer kernel API
+ The bin_attribute parameter in sysfs read/write callbacks requires const
+ in newer kernels (6.x+).
+Author: Canonical Workshop
+
+--- a/s5448f/modules/mc24lc64t.c
++++ b/s5448f/modules/mc24lc64t.c
+@@ -24,7 +24,7 @@
+ };
+ 
+ static ssize_t mc24lc64t_read(struct file *filp, struct kobject *kobj,
+-                            struct bin_attribute *bin_attr,
++                            const struct bin_attribute *bin_attr,
+                             char *buf, loff_t off, size_t count)
+ {
+         struct i2c_client *client = kobj_to_i2c_client(kobj);
+
+--- a/z9332f/modules/mc24lc64t.c
++++ b/z9332f/modules/mc24lc64t.c
+@@ -24,7 +24,7 @@
+ };
+ 
+ static ssize_t mc24lc64t_read(struct file *filp, struct kobject *kobj,
+-                            struct bin_attribute *bin_attr,
++                            const struct bin_attribute *bin_attr,
+                             char *buf, loff_t off, size_t count)
+ {
+         struct i2c_client *client = kobj_to_i2c_client(kobj);
+
+--- a/z9432f/modules/mc24lc64t.c
++++ b/z9432f/modules/mc24lc64t.c
+@@ -24,7 +24,7 @@
+ };
+ 
+ static ssize_t mc24lc64t_read(struct file *filp, struct kobject *kobj,
+-                            struct bin_attribute *bin_attr,
++                            const struct bin_attribute *bin_attr,
+                             char *buf, loff_t off, size_t count)
+ {
+         struct i2c_client *client = kobj_to_i2c_client(kobj);
+
+--- a/z9664f/modules/mc24lc64t.c
++++ b/z9664f/modules/mc24lc64t.c
+@@ -24,7 +24,7 @@
+ };
+ 
+ static ssize_t mc24lc64t_read(struct file *filp, struct kobject *kobj,
+-                            struct bin_attribute *bin_attr,
++                            const struct bin_attribute *bin_attr,
+                             char *buf, loff_t off, size_t count)
+ {
+         struct i2c_client *client = kobj_to_i2c_client(kobj);
+

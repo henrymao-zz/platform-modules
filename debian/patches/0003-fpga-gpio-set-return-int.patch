@@ -1,0 +1,24 @@
+Description: Change fpga_gpio_set to return int for newer kernel GPIO API
+ The .set callback in struct gpio_chip changed from void to int in newer kernels.
+Author: Canonical Workshop
+
+--- a/z9864f/modules/fpga_gpio.c
++++ b/z9864f/modules/fpga_gpio.c
+@@ -46,7 +46,7 @@
+     return ret;
+ }
+ 
+-static void fpga_gpio_set(struct gpio_chip *gc,
++static int fpga_gpio_set(struct gpio_chip *gc,
+                           unsigned gpio, int val)
+ {
+     struct fpga_gpio_chip *chip = gpiochip_get_data(gc);
+@@ -66,6 +66,8 @@
+     iowrite32(wdata, chip->bar + reg);
+ 
+     mutex_unlock(&chip->lock);
++
++    return 0;
+ }
+ 
+ int gpiodev_init(struct pci_dev *dev, struct fpga_dev *fpga)
