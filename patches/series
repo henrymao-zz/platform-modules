@@ -1,0 +1,4 @@
+0001-mc24lc64t-const-bin-attribute.patch
+0002-cls-i2c-mux-irq-find-mapping.patch
+0003-fpga-gpio-set-return-int.patch
+0004-fix-service-usr-local-to-usr.patch
