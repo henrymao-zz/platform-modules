@@ -912,6 +912,10 @@ static int i2c_pci_init (struct fpgapci_dev *fpgapci)
        printk("vendor 0x%x, num_bus 0x%x\n", fpgapci->pci_dev->vendor, num_bus);
        total_i2c_pci_bus = num_bus;
 
+       /* Read board revision/type from FPGA register */
+       if (fpga_ctl_addr)
+           board_rev_type = ioread32(fpga_ctl_addr + MB_BRD_REV_TYPE);
+
 	memset (&i2c_pci_adap, 0, sizeof(i2c_pci_adap));
 	memset (&fpgalogic_i2c, 0, sizeof(fpgalogic_i2c));
 	for(i=0; i < i2c_bus_controller_numb; i++)

@@ -156,15 +156,18 @@ platform_firmware_versions() {
 
 install_python_api_package() {
     device="/usr/share/sonic/device"
-    platform=$(/usr/local/bin/sonic-cfggen -H -v DEVICE_METADATA.localhost.platform)
-    rv=$(pip3 install $device/$platform/sonic_platform-1.0-py3-none-any.whl)
+    platform=$(/usr/local/bin/sonic-cfggen -H -v DEVICE_METADATA.localhost.platform 2>/dev/null)
+    if [ -z "$platform" ]; then
+        platform="x86_64-dellemc_s5232f_c3538-r0"
+    fi
+    whl="$device/$platform/sonic_platform-1.0-py3-none-any.whl"
+    if [ -f "$whl" ]; then
+        pip3 install "$whl" 2>/dev/null || python3 -m pip install "$whl" 2>/dev/null || true
+    fi
 }
 
 remove_python_api_package() {
-    rv=$(pip3 show sonic-platform > /dev/null 2>/dev/null)
-    if [ $? -eq 0 ]; then
-        rv=$(pip3 uninstall -y sonic-platform > /dev/null 2>/dev/null)
-    fi
+    pip3 show sonic-platform > /dev/null 2>/dev/null && pip3 uninstall -y sonic-platform > /dev/null 2>/dev/null || true
 }
 
 get_reboot_cause() {
