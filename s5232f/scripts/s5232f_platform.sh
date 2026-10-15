@@ -2,13 +2,20 @@
 
 init_devnum() {
     found=0
-    for devnum in 0 1; do
-        devname=`cat /sys/bus/i2c/devices/i2c-${devnum}/name`
-        # iSMT adapter can be at either dffd0000 or dfff0000
-        if [[ $devname == 'SMBus iSMT adapter at '* ]]; then
-            found=1
-            break
-        fi
+    # Wait up to 30 seconds for the iSMT SMBus adapter to be enumerated by
+    # the kernel. On some boots the platform service starts before the
+    # i2c_ismt driver has created the i2c bus sysfs entries.
+    for attempt in $(seq 1 30); do
+        for devnum in 0 1; do
+            devname=$(cat /sys/bus/i2c/devices/i2c-${devnum}/name 2>/dev/null)
+            # iSMT adapter can be at either dffd0000 or dfff0000
+            if [[ $devname == 'SMBus iSMT adapter at '* ]]; then
+                found=1
+                break
+            fi
+        done
+        [ $found -eq 1 ] && break
+        sleep 1
     done
 
     [ $found -eq 0 ] && echo "cannot find iSMT" && exit 1
@@ -96,11 +103,11 @@ switch_board_sfp() {
     esac
 }
 
-#Modsel 64 ports to applicable QSFP type modules
+#Modsel 32 ports to applicable QSFP type modules
 #This enables the adapter to respond for i2c commands
 switch_board_modsel() {
 	resource="/sys/bus/pci/devices/0000:04:00.0/resource0"
-	for ((i=1;i<=64;i++));
+	for ((i=1;i<=32;i++));
 	do
 		port_addr=$(( 16384 + ((i - 1) * 16)))
 		hex=$( printf "0x%x" $port_addr )
