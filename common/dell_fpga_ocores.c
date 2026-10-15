@@ -863,11 +863,12 @@ static int  i2c_pci_add_bus (struct i2c_adapter *adap)
 
 static int i2c_init_internal_data(void)
 {
-	int i, rst_cnt = 0;
+	int i;
 	uint32_t sys_srr;
 
 	for( i = 0; i < total_i2c_pci_bus; i++ )
 	{
+		int rst_cnt = 0;
 		fpgalogic_i2c[i].reg_shift = 0; /* 8 bit registers */
 		fpgalogic_i2c[i].reg_io_width = 1; /* 8 bit read/write */
 		fpgalogic_i2c[i].timeout = 500;//1000;//1ms
@@ -910,6 +911,10 @@ static int i2c_pci_init (struct fpgapci_dev *fpgapci)
 
        printk("vendor 0x%x, num_bus 0x%x\n", fpgapci->pci_dev->vendor, num_bus);
        total_i2c_pci_bus = num_bus;
+
+       /* Read board revision/type from FPGA register */
+       if (fpga_ctl_addr)
+           board_rev_type = ioread32(fpga_ctl_addr + MB_BRD_REV_TYPE);
 
 	memset (&i2c_pci_adap, 0, sizeof(i2c_pci_adap));
 	memset (&fpgalogic_i2c, 0, sizeof(fpgalogic_i2c));
