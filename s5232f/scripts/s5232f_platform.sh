@@ -103,11 +103,11 @@ switch_board_sfp() {
     esac
 }
 
-#Modsel 32 ports to applicable QSFP type modules
+#Modsel 64 ports to applicable QSFP type modules
 #This enables the adapter to respond for i2c commands
 switch_board_modsel() {
 	resource="/sys/bus/pci/devices/0000:04:00.0/resource0"
-	for ((i=1;i<=32;i++));
+	for ((i=1;i<=64;i++));
 	do
 		port_addr=$(( 16384 + ((i - 1) * 16)))
 		hex=$( printf "0x%x" $port_addr )
