@@ -217,7 +217,7 @@ if [ "$1" == "init" ]; then
     switch_board_modsel
     switch_board_led_default
     install_python_api_package
-    #/usr/bin/qsfp_irq_enable.py
+    /usr/bin/qsfp_irq_enable.py
     platform_firmware_versions
     echo 1000 > /sys/module/ipmi_si/parameters/kipmid_max_busy_us
     echo -2 > /sys/bus/i2c/drivers/pca954x/603-0074/idle_state
