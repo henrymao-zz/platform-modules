@@ -2,13 +2,20 @@
 
 init_devnum() {
     found=0
-    for devnum in 0 1; do
-        devname=`cat /sys/bus/i2c/devices/i2c-${devnum}/name`
-        # iSMT adapter can be at either dffd0000 or dfff0000
-        if [[ $devname == 'SMBus iSMT adapter at '* ]]; then
-            found=1
-            break
-        fi
+    # Wait up to 30 seconds for the iSMT SMBus adapter to be enumerated by
+    # the kernel. On some boots the platform service starts before the
+    # i2c_ismt driver has created the i2c bus sysfs entries.
+    for attempt in $(seq 1 30); do
+        for devnum in 0 1; do
+            devname=$(cat /sys/bus/i2c/devices/i2c-${devnum}/name 2>/dev/null)
+            # iSMT adapter can be at either dffd0000 or dfff0000
+            if [[ $devname == 'SMBus iSMT adapter at '* ]]; then
+                found=1
+                break
+            fi
+        done
+        [ $found -eq 1 ] && break
+        sleep 1
     done
 
     [ $found -eq 0 ] && echo "cannot find iSMT" && exit 1
@@ -149,15 +156,18 @@ platform_firmware_versions() {
 
 install_python_api_package() {
     device="/usr/share/sonic/device"
-    platform=$(/usr/local/bin/sonic-cfggen -H -v DEVICE_METADATA.localhost.platform)
-    rv=$(pip3 install $device/$platform/sonic_platform-1.0-py3-none-any.whl)
+    platform=$(/usr/local/bin/sonic-cfggen -H -v DEVICE_METADATA.localhost.platform 2>/dev/null)
+    if [ -z "$platform" ]; then
+        platform="x86_64-dellemc_s5232f_c3538-r0"
+    fi
+    whl="$device/$platform/sonic_platform-1.0-py3-none-any.whl"
+    if [ -f "$whl" ]; then
+        pip3 install "$whl" 2>/dev/null || python3 -m pip install "$whl" 2>/dev/null || true
+    fi
 }
 
 remove_python_api_package() {
-    rv=$(pip3 show sonic-platform > /dev/null 2>/dev/null)
-    if [ $? -eq 0 ]; then
-        rv=$(pip3 uninstall -y sonic-platform > /dev/null 2>/dev/null)
-    fi
+    pip3 show sonic-platform > /dev/null 2>/dev/null && pip3 uninstall -y sonic-platform > /dev/null 2>/dev/null || true
 }
 
 get_reboot_cause() {
