@@ -7,8 +7,8 @@ DefaultDependencies=no
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/s5232f_platform.sh init
-ExecStop=/usr/bin/s5232f_platform.sh deinit
+ExecStart=/usr/local/bin/s5232f_platform.sh init
+ExecStop=/usr/local/bin/s5232f_platform.sh deinit
 RemainAfterExit=yes
 
 [Install]
