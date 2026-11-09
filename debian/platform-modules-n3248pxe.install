@@ -1,6 +1,5 @@
 n3248pxe/scripts/n3248pxe_platform.sh usr/bin
 n3248pxe/scripts/platform_sensors.py usr/bin
-n3248pxe/scripts/sensors usr/bin
 n3248pxe/scripts//portiocfg.py usr/bin
 n3248pxe/scripts//ports_xcvrd_notify.py usr/bin
 n3248pxe/systemd/platform-modules-n3248pxe.service etc/systemd/system

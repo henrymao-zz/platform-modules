@@ -1,7 +1,6 @@
 s3248t/scripts/s3248t_platform.sh usr/bin
 s3248t/scripts/mux_controller.sh usr/bin
 s3248t/scripts/platform_sensors.py usr/bin
-s3248t/scripts/sensors usr/bin
 s3248t/scripts/portiocfg.py usr/bin
 s3248t/systemd/platform-modules-s3248t.service etc/systemd/system
 s3248t/systemd/mux-ctrl.service etc/systemd/system

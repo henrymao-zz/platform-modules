@@ -1,7 +1,6 @@
 s5448f/scripts/s5448f_platform.sh usr/bin
 s5448f/scripts/check_qsfp.sh usr/bin
 s5448f/scripts/platform_sensors.py usr/bin
-s5448f/scripts/sensors usr/bin
 s5448f/scripts/pcisysfs.py usr/bin
 s5448f/cfg/s5448f-modules.conf etc/modules-load.d
 s5448f/cfg/s5448f-params.conf etc/modprobe.d

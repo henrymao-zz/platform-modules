@@ -1,7 +1,6 @@
 s5212f/scripts/s5212f_platform.sh usr/bin
 s5212f/scripts/check_qsfp.sh usr/bin
 s5212f/scripts/platform_sensors.py usr/bin
-s5212f/scripts/sensors usr/bin
 s5212f/scripts/qsfp_irq_enable.py usr/bin
 s5212f/cfg/s5212f-modules.conf etc/modules-load.d
 s5212f/systemd/platform-modules-s5212f.service etc/systemd/system

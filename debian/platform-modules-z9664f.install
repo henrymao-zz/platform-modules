@@ -1,7 +1,6 @@
 z9664f/scripts/z9664f_platform.sh usr/bin
 z9664f/scripts/check_qsfp.sh usr/bin
 z9664f/scripts/platform_sensors.py usr/bin
-z9664f/scripts/sensors usr/bin
 z9664f/scripts/pcisysfs.py usr/bin
 z9664f/cfg/z9664f-modules.conf etc/modules-load.d
 z9664f/cfg/z9664f-params.conf etc/modprobe.d

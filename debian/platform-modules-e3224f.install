@@ -1,6 +1,5 @@
 e3224f/scripts/e3224f_platform.sh usr/bin
 e3224f/scripts/platform_sensors.py usr/bin
-e3224f/scripts/sensors usr/bin
 e3224f/scripts//portiocfg.py usr/bin
 e3224f/scripts//ports_xcvrd_notify.py usr/bin
 e3224f/systemd/platform-modules-e3224f.service etc/systemd/system

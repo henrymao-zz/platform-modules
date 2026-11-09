@@ -1,6 +1,5 @@
 s5296f/scripts/s5296f_platform.sh usr/bin
 s5296f/scripts/platform_sensors.py usr/bin
-s5296f/scripts/sensors usr/bin
 s5296f/scripts/pcisysfs.py usr/bin
 s5296f/cfg/s5296f-modules.conf etc/modules-load.d
 s5296f/systemd/platform-modules-s5296f.service etc/systemd/system

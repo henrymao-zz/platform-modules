@@ -1,7 +1,6 @@
 s5224f/scripts/s5224f_platform.sh usr/bin
 s5224f/scripts/check_qsfp.sh usr/bin
 s5224f/scripts/platform_sensors.py usr/bin
-s5224f/scripts/sensors usr/bin
 s5224f/scripts/pcisysfs.py usr/bin
 s5224f/scripts/qsfp_irq_enable.py usr/bin
 s5224f/cfg/s5224f-modules.conf etc/modules-load.d

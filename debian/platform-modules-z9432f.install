@@ -1,7 +1,6 @@
 z9432f/scripts/z9432f_platform.sh usr/bin
 z9432f/scripts/check_qsfp.sh usr/bin
 z9432f/scripts/platform_sensors.py usr/bin
-z9432f/scripts/sensors usr/bin
 z9432f/scripts/qsfp_irq_enable.py usr/bin
 z9432f/cfg/z9432f-modules.conf etc/modules-load.d
 z9432f/systemd/platform-modules-z9432f.service etc/systemd/system
