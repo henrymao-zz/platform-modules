@@ -10,13 +10,13 @@ sys_devices() {
         "new_device")    #syseeprom
                          i2c_config "echo 24c02 0x50 > /sys/bus/i2c/devices/i2c-2/$1"
                          #Attach Fan Controller
-                         i2c_config "echo emc2305 0x2c > /sys/bus/i2c/devices/i2c-7/$1"
+                         i2c_config "echo emc2305 0x2c > /sys/bus/i2c/devices/i2c-6/$1"
                          #Attach temperature monitor
-                         i2c_config "echo tmp75 0x49 > /sys/bus/i2c/devices/i2c-7/$1"
-                         i2c_config "echo tmp75 0x4a > /sys/bus/i2c/devices/i2c-7/$1"
-                         i2c_config "echo tmp75 0x4b > /sys/bus/i2c/devices/i2c-7/$1"
-                         i2c_config "echo tmp75 0x4c > /sys/bus/i2c/devices/i2c-7/$1"
-                         i2c_config "echo tmp75 0x4f > /sys/bus/i2c/devices/i2c-7/$1"
+                         i2c_config "echo tmp75 0x49 > /sys/bus/i2c/devices/i2c-6/$1"
+                         i2c_config "echo tmp75 0x4a > /sys/bus/i2c/devices/i2c-6/$1"
+                         i2c_config "echo tmp75 0x4b > /sys/bus/i2c/devices/i2c-6/$1"
+                         i2c_config "echo tmp75 0x4c > /sys/bus/i2c/devices/i2c-6/$1"
+                         i2c_config "echo tmp75 0x4f > /sys/bus/i2c/devices/i2c-6/$1"
                          #Attach PSU Controller
                          i2c_config "echo dps460 0x5e > /sys/bus/i2c/devices/i2c-10/$1"
                          i2c_config "echo dps460 0x5e > /sys/bus/i2c/devices/i2c-11/$1"
@@ -29,12 +29,12 @@ sys_devices() {
                          i2c_config "echo 24c02 0x50 > /sys/bus/i2c/devices/i2c-17/$1"
                          ;;
         "delete_device") i2c_config "echo 0x50 > /sys/bus/i2c/devices/i2c-2/$1"
-                         i2c_config "echo 0x2c > /sys/bus/i2c/devices/i2c-7/$1"
-                         i2c_config "echo 0x49 > /sys/bus/i2c/devices/i2c-7/$1"
-                         i2c_config "echo 0x4a > /sys/bus/i2c/devices/i2c-7/$1"
-                         i2c_config "echo 0x4b > /sys/bus/i2c/devices/i2c-7/$1"
-                         i2c_config "echo 0x4c > /sys/bus/i2c/devices/i2c-7/$1"
-                         i2c_config "echo 0x4f > /sys/bus/i2c/devices/i2c-7/$1"
+                         i2c_config "echo 0x2c > /sys/bus/i2c/devices/i2c-6/$1"
+                         i2c_config "echo 0x49 > /sys/bus/i2c/devices/i2c-6/$1"
+                         i2c_config "echo 0x4a > /sys/bus/i2c/devices/i2c-6/$1"
+                         i2c_config "echo 0x4b > /sys/bus/i2c/devices/i2c-6/$1"
+                         i2c_config "echo 0x4c > /sys/bus/i2c/devices/i2c-6/$1"
+                         i2c_config "echo 0x4f > /sys/bus/i2c/devices/i2c-6/$1"
                          i2c_config "echo 0x5e > /sys/bus/i2c/devices/i2c-10/$1"
                          i2c_config "echo 0x5e > /sys/bus/i2c/devices/i2c-11/$1"
                          i2c_config "echo 0x56 > /sys/bus/i2c/devices/i2c-10/$1"
@@ -117,7 +117,7 @@ if [[ "$1" == "init" ]]; then
    modprobe i2c-mux-pca954x
    modprobe pmbus
    modprobe emc2305
-   modprobe dps200
+   modprobe dps460
    modprobe dell_n3248te_platform
 
    sys_devices "new_device"
@@ -132,7 +132,7 @@ elif [[ "$1" == "deinit" ]]; then
     sysdevices "delete_device"
 
     modprobe -r dell_n3248te_platform
-    modprobe -r dps200
+    modprobe -r dps460
     modprobe -r emc2305
     modprobe -r pmbus
     modprobe -r i2c-mux-pca954x
