@@ -116,6 +116,7 @@ if [[ "$1" == "init" ]]; then
    modprobe i2c-dev
    modprobe i2c-mux-pca954x
    modprobe pmbus
+   modprobe emc2305
    modprobe dps460
    modprobe dell_n3248te_platform
 
@@ -132,6 +133,7 @@ elif [[ "$1" == "deinit" ]]; then
 
     modprobe -r dell_n3248te_platform
     modprobe -r dps460
+    modprobe -r emc2305
     modprobe -r pmbus
     modprobe -r i2c-mux-pca954x
     modprobe -r i2c-dev
