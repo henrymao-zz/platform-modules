@@ -1,0 +1,29 @@
+INTERVAL=5
+# "tmp75-i2c-6-49"  "Switch Near Temperature"
+# "tmp75-i2c-6-4a"  "Switch Rear Temperature"
+# "tmp75-i2c-6-4b"  "Front Panel PHY Temperature"
+# "tmp75-i2c-6-4c"  "Near Front Panel Temperature"
+# "tmp75-i2c-6-4f"   "Middle Fan Tray Temperature"
+DEVPATH=hwmon1=devices/pci0000:00/0000:00:12.0/i2c-0/i2c-6/6-002c hwmon2=devices/pci0000:00/0000:00:12.0/i2c-0/i2c-6/6-0049  hwmon3=devices/pci0000:00/0000:00:12.0/i2c-0/i2c-6/6-004a hwmon4=devices/pci0000:00/0000:00:12.0/i2c-0/i2c-6/6-004b
+DEVNAME=hwmon1=emc2305 hwmon2=tmp75 hwmon3=tmp75 hwmon4=tmp75
+
+# temp to PWM binding
+#
+# NOTE: the in-tree kernel driver (drivers/hwmon/emc2305.c) runs with
+# pwm_separate=false on this platform (no DT / platform data), so ANY pwmN
+# write is applied to ALL fan channels - the last write in each cycle wins.
+# To keep the hottest zone properly cooled, all three pwm outputs follow the
+# maximum of the three zone sensors via the !command fancontrol feature
+# (/usr/local/bin/emc2305-maxtemp prints the max in milli-degrees Celsius).
+FCTEMPS=hwmon1/pwm1=!/usr/local/bin/emc2305-maxtemp hwmon1/pwm2=!/usr/local/bin/emc2305-maxtemp hwmon1/pwm3=!/usr/local/bin/emc2305-maxtemp
+# fan to PWM binding
+FCFANS=hwmon1/pwm1=hwmon1/fan1_input hwmon1/pwm2=hwmon1/fan2_input hwmon1/pwm3=hwmon1/fan3_input
+
+MINTEMP=hwmon1/pwm1=0  hwmon1/pwm2=0 hwmon1/pwm3=0
+MAXTEMP=hwmon1/pwm1=40  hwmon1/pwm2=40 hwmon1/pwm3=40
+
+MINSTART=hwmon1/pwm1=100  hwmon1/pwm2=100 hwmon1/pwm3=100
+MINSTOP=hwmon1/pwm1=0  hwmon1/pwm2=0 hwmon1/pwm3=0
+
+MINPWM=hwmon1/pwm1=0  hwmon1/pwm2=0 hwmon1/pwm3=0
+MAXPWM=hwmon1/pwm1=150  hwmon1/pwm2=150 hwmon1/pwm3=150
