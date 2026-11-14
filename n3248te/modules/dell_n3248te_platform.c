@@ -169,7 +169,14 @@
         return cpld_reg_write_byte(mux->data.cpld, mux->data.reg_addr, chan_data);
     }
 
-    static int __init mux_probe(struct platform_device *pdev)
+    /*
+     * NOTE: probe callbacks must not be marked __init. If the parent
+     * adapter is not up yet this probe returns -EPROBE_DEFER and the
+     * driver core retries it later from deferred_probe_work_func() --
+     * by then the module .init text has been freed and the retry would
+     * jump into freed memory and panic the kernel.
+     */
+    static int mux_probe(struct platform_device *pdev)
     {
         struct i2c_mux_core *muxc;
         struct pf_mux *mux;
@@ -1093,7 +1100,8 @@ static int get_ismt_base_nr(void)
     return -ENODEV;
 }
 
-static int __init cpld_probe(struct platform_device *pdev)
+/* Not __init: see the note on mux_probe(). */
+static int cpld_probe(struct platform_device *pdev)
 {
     struct cpld_platform_data *pdata;
     struct i2c_adapter *parent;
