@@ -1,5 +1,8 @@
 INTERVAL=5
-DEVPATH=hwmon1=devices/pci0000:00/0000:00:12.0/i2c-0/i2c-6/6-002c hwmon2=devices/pci0000:00/0000:00:12.0/i2c-0/i2c-6/6-0049 hwmon3=devices/pci0000:00/0000:00:12.0/i2c-0/i2c-6/6-004a hwmon4=devices/pci0000:00/0000:00:12.0/i2c-0/i2c-6/6-004b
+# The DEVPATHs below assume the pinned i2c bus numbering: the top-level
+# PCA9548 fan/temp channel sits at bus 7 (see n3248te-modules.conf, which
+# must load i2c-i801 before dell_n3248te_platform for this to hold).
+DEVPATH=hwmon1=devices/pci0000:00/0000:00:12.0/i2c-0/i2c-7/7-002c hwmon2=devices/pci0000:00/0000:00:12.0/i2c-0/i2c-7/7-0049 hwmon3=devices/pci0000:00/0000:00:12.0/i2c-0/i2c-7/7-004a hwmon4=devices/pci0000:00/0000:00:12.0/i2c-0/i2c-7/7-004b
 DEVNAME=hwmon1=emc2305 hwmon2=tmp75 hwmon3=tmp75 hwmon4=tmp75
 
 # Fixed-speed mode: zones are always >= MAXTEMP(10C), so fancontrol pins
